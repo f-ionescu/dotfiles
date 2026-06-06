@@ -1,0 +1,8 @@
+[includeIf "gitdir:~/work/"]
+    path = .gitconfig-work
+
+[includeIf "gitdir:~/learn/"]
+    path = .gitconfig-personal
+
+[pager]
+	branch = false

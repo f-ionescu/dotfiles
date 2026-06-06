@@ -1,0 +1,41 @@
+#List
+alias ls="ls --color=auto"
+alias ll="ls -lAH"
+
+#Zsh
+alias zshrc="vi ~/.zshrc"
+alias hist="vi ~/.zsh_history"
+alias reload="source ~/.zshrc"
+
+#Folder Navigation
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+#Kubernetes
+alias k="kubectl"
+alias kgp="kubectl get pods"
+alias kgpwide="kubectl get pods -o wide"
+alias kgpw="kubectl get pods -w"
+alias kdp="kubectl describe pod"
+alias kcns="kubectl config set-context --current --namespace"
+
+#Grep
+alias grep='grep --color=auto'
+
+#Path 
+alias path='echo -e ${PATH//:/\\n}'
+
+# Git
+alias gst="git status"
+alias gpl="git pull"
+alias gco="git commit"
+alias glo="git log --oneline"
+alias gsw="git switch"
+
+#Toolset
+alias ts='podman run -it --rm -v ~/.ssh:/home/local/.ssh  -v ~/.config/docker-ccp/init.sh:/scripts/init.sh -v /Users/florianionescu/work:/srv -v ~/.config/docker-ccp/terraform-cache/:/cache/.terraform.d/plugin-cache/ artifactory.6543.aec.auence.com/common/toolset-dev:v2.6.0 zsh'
+
+#EKS Login
+alias 172="aws eks update-kubeconfig --name production-eks-1727-euc1 --region eu-central-1 --kubeconfig ~/work/kubeconfig/production-eks-1727-euc1; export KUBECONFIG=~/work/kubeconfig/production-eks-1727-euc1"
