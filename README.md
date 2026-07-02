@@ -10,10 +10,10 @@ link straight into `$HOME`); all provisioning tooling lives under `setup/`.
 ```
 ~/dotfiles/
 ├── git/  nvim/  tmux/  vim/  zsh/   ← stow packages (the dotfiles)
+├── Makefile                         ← convenience targets
 └── setup/
     ├── install.sh                  ← new-machine bootstrap
     ├── Brewfile                    ← brew formulae + casks (`brew bundle`)
-    ├── Makefile                    ← convenience targets
     ├── iterm2/                     ← iTerm2 prefs (custom-folder)
     └── vscode/                     ← VSCode settings + extension list
 ```
@@ -89,10 +89,10 @@ git -C ~/dotfiles remote set-url origin git@github.com:f-ionescu/dotfiles.git
 
 ## Day-to-day
 
-Run from the `setup/` directory:
+Run from the repo root:
 
 ```sh
-cd ~/dotfiles/setup
+cd ~/dotfiles
 make help          # list targets
 make stow          # re-link packages after adding files
 make brew          # install/update packages from the Brewfile

@@ -1,4 +1,4 @@
-# dotfiles — convenience targets (run from the setup/ dir: `make <target>`)
+# dotfiles — convenience targets (run from the repo root: `make <target>`)
 
 DOTFILES := $(HOME)/dotfiles
 SETUP    := $(DOTFILES)/setup
@@ -16,7 +16,7 @@ help: ## Show this help
 		| awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-13s\033[0m %s\n", $$1, $$2}'
 
 install: ## Full bootstrap on a new machine
-	./install.sh
+	$(SETUP)/install.sh
 
 brew: ## Install everything from the Brewfile
 	brew bundle --file=$(SETUP)/Brewfile
