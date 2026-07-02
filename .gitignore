@@ -1,0 +1,11 @@
+.DS_Store
+.netrwhist
+.viminfo
+.claude
+
+# tmux plugins are installed by tpm at runtime, not committed
+tmux/.tmux/plugins/
+tmux/.config/plugins/
+
+# vim plugins are installed by vim-plug (:PlugInstall), not committed
+vim/.vim/plugged/

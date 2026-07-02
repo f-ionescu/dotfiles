@@ -1,0 +1,6 @@
+{
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "vscode-icons",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true
+}
