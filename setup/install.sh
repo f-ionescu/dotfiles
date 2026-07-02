@@ -206,22 +206,6 @@ configure_vscode() {
   fi
 }
 
-# ----- 11. Make zsh the default shell ----------------------------------------
-set_default_shell() {
-  local zsh_path
-  zsh_path="$(command -v zsh)"
-  if [[ "${SHELL:-}" == "$zsh_path" ]]; then
-    ok "zsh already the default shell"
-    return
-  fi
-  if ! grep -qx "$zsh_path" /etc/shells 2>/dev/null; then
-    info "Adding $zsh_path to /etc/shells (needs sudo)..."
-    echo "$zsh_path" | sudo tee -a /etc/shells >/dev/null
-  fi
-  info "Setting default shell to zsh..."
-  chsh -s "$zsh_path" || warn "chsh failed - set it manually with: chsh -s $zsh_path"
-}
-
 main() {
   install_xcode_clt
   install_homebrew
@@ -233,7 +217,6 @@ main() {
   install_vim_plugins
   configure_iterm2
   configure_vscode
-  set_default_shell
 
   printf '\n'
   ok "Done! Open a new terminal (or run: exec zsh) to load your setup."
