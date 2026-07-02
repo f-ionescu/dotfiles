@@ -28,28 +28,33 @@ Each package mirrors `$HOME`:
 | `vim`   | `.vimrc`, `.vim/` |
 | `zsh`   | `.zshrc`, `.zprofile`, `.zsh_aliases`, `.p10k.zsh` |
 
-Editor/terminal plugins are **not** committed — each tool fetches its own, and
-`install.sh` triggers all of them:
+### Plugins
 
-- **tmux**: [tpm](https://github.com/tmux-plugins/tpm) installs the plugins
-  declared in `.tmux.conf` (catppuccin, cpu, battery) to `~/.tmux/plugins/`.
-  Manage from inside tmux: `<prefix> + I` install, `<prefix> + U` update,
-  `<prefix> + alt + u` remove unlisted.
-- **vim**: vim-plug (committed at `vim/.vim/autoload/plug.vim`) installs to the
-  git-ignored `vim/.vim/plugged/` (airline, fzf, …).
-- **nvim**: lazy.nvim bootstraps itself and installs to `~/.local/share/nvim/lazy/`,
-  pinned by the committed `lazy-lock.json`.
+Plugins are **not** committed — the repo tracks only each tool's plugin list,
+and `install.sh` triggers all three installers:
+
+| Tool | Plugin list | Installer | Installs to |
+|------|-------------|-----------|-------------|
+| tmux | `@plugin` lines in `.tmux.conf` | [tpm](https://github.com/tmux-plugins/tpm) | `~/.tmux/plugins/` |
+| vim  | `Plug` lines in `.vimrc` | vim-plug (committed) | `vim/.vim/plugged/` (git-ignored) |
+| nvim | `lazy-lock.json` (pinned versions) | lazy.nvim (bootstraps itself) | `~/.local/share/nvim/lazy/` |
+
+tmux plugins (catppuccin, cpu, battery) can also be managed from inside tmux:
+`<prefix> + I` install, `<prefix> + U` update, `<prefix> + alt + u` remove unlisted.
 
 ### iTerm2 and VSCode (not stow packages)
 
-- **iTerm2** loads its settings from `setup/iterm2/` via *Load settings from a
-  custom folder or URL* (iTerm2 → Settings → General → Settings — `install.sh`
-  sets this automatically). iTerm2 reads the folder on launch and writes back on
-  quit, so changes are picked up by git with no extra steps.
-- **VSCode** config lives in `~/Library/Application Support/Code/User/`, so
-  `install.sh` symlinks `setup/vscode/settings.json` there and installs every
-  extension in `setup/vscode/extensions.txt` with `code --install-extension`.
-  After changing extensions, run `make code-refresh` to refresh the list and commit.
+**iTerm2** — settings live in `setup/iterm2/`, loaded via *Load settings from a
+custom folder or URL* (`install.sh` sets this up). iTerm2 reads the folder on
+launch and writes back on quit, so git picks up changes with no extra steps.
+
+**VSCode** — its config dir (`~/Library/Application Support/Code/User/`) isn't
+under `$HOME`'s dotfiles, so `install.sh` handles it directly:
+
+- symlinks `setup/vscode/settings.json` into the config dir
+- installs every extension listed in `setup/vscode/extensions.txt`
+
+After installing/removing extensions, run `make code-refresh` and commit.
 
 ## Set up a new MacBook
 
