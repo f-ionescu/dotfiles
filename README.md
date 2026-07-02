@@ -49,7 +49,7 @@ Editor/terminal plugins are **not** committed — each tool fetches its own, and
 - **VSCode** config lives in `~/Library/Application Support/Code/User/`, so
   `install.sh` symlinks `setup/vscode/settings.json` there and installs every
   extension in `setup/vscode/extensions.txt` with `code --install-extension`.
-  After changing extensions, run `make code-dump` to refresh the list and commit.
+  After changing extensions, run `make code-refresh` to refresh the list and commit.
 
 ## Set up a new MacBook
 
@@ -105,10 +105,10 @@ Run from the `setup/` directory:
 
 ```sh
 cd ~/dotfiles/setup
-make help       # list targets
-make stow       # re-link packages after adding files
-make brew       # install/update packages from the Brewfile
-make dump       # regenerate the Brewfile from this machine — review & commit
-make code-dump  # refresh the VSCode extensions list — review & commit
-make unstow     # remove all symlinks
+make help          # list targets
+make stow          # re-link packages after adding files
+make brew          # install/update packages from the Brewfile
+make brew-refresh  # regenerate the Brewfile from this machine — review & commit
+make code-refresh  # refresh the VSCode extensions list — review & commit
+make unstow        # remove all symlinks
 ```
