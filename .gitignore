@@ -2,6 +2,7 @@
 .netrwhist
 .viminfo
 .claude
+.vscode
 
 # tmux plugins are installed by tpm at runtime, not committed
 tmux/.tmux/plugins/
