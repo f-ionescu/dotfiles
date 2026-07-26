@@ -14,6 +14,7 @@ brew "jq"
 brew "coreutils"
 brew "hashicorp/tap/terraform", trusted: true
 brew "terragrunt"
+brew "opentofu"
 cask "claude"
 cask "firefox"
 cask "font-agave-nerd-font"
