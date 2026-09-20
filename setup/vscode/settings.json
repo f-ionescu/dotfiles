@@ -1,6 +1,8 @@
 {
     "explorer.confirmDelete": false,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "workbench.colorTheme": "One Dark Pro Flat",
+    "vscode-pets.theme": "none"
 }
