@@ -13,8 +13,11 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'nordtheme/vim'
 
 call plug#end()
+
+colorscheme nord
 
 " Statusline (vim-airline)
 let g:airline_powerline_fonts = 1            " use Nerd Font glyphs (CodeNewRomanNFM)
