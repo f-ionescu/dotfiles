@@ -14,7 +14,6 @@ link straight into `$HOME`); all provisioning tooling lives under `setup/`.
 └── setup/
     ├── install.sh                            ← new-machine bootstrap
     ├── Brewfile                              ← brew formulae + casks (`brew bundle`)
-    ├── iterm2/                               ← iTerm2 prefs (custom-folder)
     └── vscode/                               ← VSCode settings + extension list
 ```
 
@@ -30,9 +29,6 @@ Each package mirrors `$HOME`:
 | `zsh`     | `.zshrc`, `.zprofile`, `.zsh_aliases`, `.p10k.zsh` |
 
 ### Not in stow
-
-**iTerm2** settings live in `setup/iterm2/`.
-iTerm2 reads the folder on launch and writes back on quit, so git picks up changes with no extra steps.
 
 **VSCode** config dir is `~/Library/Application Support/Code/User/`
 - symlinks `setup/vscode/settings.json` into the config dir
