@@ -9,24 +9,25 @@ link straight into `$HOME`); all provisioning tooling lives under `setup/`.
 
 ```
 ~/dotfiles/
-├── git/  nvim/  tmux/  vim/  zsh/   ← stow packages (the dotfiles)
-├── Makefile                         ← convenience targets
+├── ghostty/  git/  nvim/  tmux/  vim/  zsh/   ← stow packages (the dotfiles)
+├── Makefile                                  ← convenience targets
 └── setup/
-    ├── install.sh                  ← new-machine bootstrap
-    ├── Brewfile                    ← brew formulae + casks (`brew bundle`)
-    ├── iterm2/                     ← iTerm2 prefs (custom-folder)
-    └── vscode/                     ← VSCode settings + extension list
+    ├── install.sh                            ← new-machine bootstrap
+    ├── Brewfile                              ← brew formulae + casks (`brew bundle`)
+    ├── iterm2/                               ← iTerm2 prefs (custom-folder)
+    └── vscode/                               ← VSCode settings + extension list
 ```
 
 Each package mirrors `$HOME`:
 
-| Package | Contents |
-|---------|----------|
-| `git`   | `.gitconfig` (identity uses GitHub's noreply address, safe to commit) |
-| `nvim`  | `.config/nvim` (lazy.nvim + lualine/bufferline statusline) |
-| `tmux`  | `.tmux.conf` |
-| `vim`   | `.vimrc`, `.vim/` |
-| `zsh`   | `.zshrc`, `.zprofile`, `.zsh_aliases`, `.p10k.zsh` |
+| Package   | Contents |
+|-----------|----------|
+| `ghostty` | `.config/ghostty/config` |
+| `git`     | `.gitconfig` (identity uses GitHub's noreply address, safe to commit) |
+| `nvim`    | `.config/nvim` (lazy.nvim + lualine/bufferline statusline) |
+| `tmux`    | `.tmux.conf` |
+| `vim`     | `.vimrc`, `.vim/` |
+| `zsh`     | `.zshrc`, `.zprofile`, `.zsh_aliases`, `.p10k.zsh` |
 
 ### Not in stow
 
