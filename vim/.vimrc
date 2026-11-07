@@ -1,24 +1,29 @@
-set nocompatible      " required before plugins load (e.g. vim-airline's guard)
-set laststatus=2
-set rnu nu
-syntax on
+" --- General ---
+set nocompatible        " Disable vi compatibility; required before plugins load
+syntax on               " Enable syntax highlighting
 
-set t_Co=256
+" --- Display ---
+set number              " Show absolute line number on current line
+set relativenumber      " Show relative numbers on other lines
+set laststatus=2        " Always show the statusline
+set t_Co=256            " Use 256 terminal colors
 
-"vim-plug
+" --- Plugins (vim-plug) ---
 call plug#begin()
 
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'nordtheme/vim'
+Plug 'tpope/vim-sensible'               " Sensible baseline defaults
+Plug 'junegunn/fzf'                     " Fuzzy finder core
+Plug 'junegunn/fzf.vim'                 " Vim commands for fzf (:Files, :Rg, ...)
+Plug 'vim-airline/vim-airline'          " Statusline
+Plug 'vim-airline/vim-airline-themes'   " Airline themes
+Plug 'nordtheme/vim'                    " Nord colorscheme
 
 call plug#end()
 
-colorscheme nord
+" --- Colors (must come after plug#end) ---
+colorscheme nord                        " Apply Nord theme
+highlight Comment ctermfg=146 guifg=#D3D3D3   " Lighter comment color
 
-" Statusline (vim-airline)
-let g:airline_powerline_fonts = 1            " use Nerd Font glyphs (CodeNewRomanNFM)
-let g:airline#extensions#tabline#enabled = 1 " show buffers/tabs in the top bar
+" --- Airline ---
+let g:airline_powerline_fonts = 1             " Use Nerd Font glyphs
+let g:airline#extensions#tabline#enabled = 1  " Show buffers/tabs in top bar
